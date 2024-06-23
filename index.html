@@ -74,14 +74,21 @@
         </div>
     </footer>
 
+    <div class="notification">Domain copied to clipboard!</div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const copyButton = document.querySelector('.copy-domain-btn');
+            const notification = document.querySelector('.notification');
 
             copyButton.addEventListener('click', function() {
                 const domain = 'example.com'; // Replace with your domain
-                navigator.clipboard.writeText(domain);
-                alert('Domain copied to clipboard!');
+                navigator.clipboard.writeText(domain).then(() => {
+                    notification.classList.add('show');
+                    setTimeout(() => {
+                        notification.classList.remove('show');
+                    }, 3000);
+                });
             });
         });
     </script>

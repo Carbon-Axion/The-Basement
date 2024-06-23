@@ -43,7 +43,7 @@ header h1 {
     font-size: 2em;
     font-weight: bold;
     font-family: 'CustomFont', Arial, sans-serif;
-	margin-top: -20px; /* Optional: Adjust bottom margin */
+    margin-top: -20px; /* Optional: Adjust bottom margin */
 }
 
 nav ul {
@@ -237,4 +237,26 @@ footer {
     background-color: var(--red); /* Red background on focus/active */
     color: var(--white); /* White text on focus/active */
     border-color: var(--red); /* Red border on focus/active */
+}
+
+.notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 0, 0, 0.8); /* Semi-transparent red background */
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+}
+
+.notification.show {
+    display: block;
+    animation: fadeOut 3s forwards; /* Fade out animation */
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
