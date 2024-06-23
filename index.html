@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Basement Gaming</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>The Basement Gaming</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Welcome to The Basement!</h2>
+            <p>Your hub for all things TF2 and Minecraft.</p>
+        </div>
+    </section>
+
+    <section id="games">
+        <div class="container">
+            <h2>Featured Games</h2>
+            <div class="game-list">
+                <div class="game">
+                    <img src="images/tf2.jpg" alt="TF2 Game">
+                    <h3>Team Fortress 2</h3>
+                    <p>Experience the thrilling battles of TF2 with The Basement community.</p>
+                </div>
+                <div class="discord-widget-wrapper">
+                    <iframe src="https://discord.com/widget?id=1226721803410341998&theme=dark" width="500" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                </div>
+                <div class="game">
+                    <img src="images/minecraft.png" alt="Minecraft Game">
+                    <h3>Minecraft</h3>
+                    <p>Join us in Minecraft for creative builds and survival adventures.</p>
+                    <button class="copy-domain-btn">Copy Domain</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news">
+        <div class="container">
+            <h2>Latest News</h2>
+            <div class="news-list">
+                <div class="news-item">
+                    <h3>News Title 1</h3>
+                    <p>Summary of news article 1.</p>
+                </div>
+                <div class="news-item">
+                    <h3>News Title 2</h3>
+                    <p>Summary of news article 2.</p>
+                </div>
+                <!-- Add more news entries -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 The Basement Gaming. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const copyButton = document.querySelector('.copy-domain-btn');
+
+            copyButton.addEventListener('click', function() {
+                const domain = 'example.com'; // Replace with your domain
+                navigator.clipboard.writeText(domain);
+                alert('Domain copied to clipboard!');
+            });
+        });
+    </script>
+</body>
+</html>
