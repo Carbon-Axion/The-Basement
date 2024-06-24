@@ -32,15 +32,9 @@ body {
 }
 
 header {
-<<<<<<< HEAD
     background: var(--accent-gradient); /* Apply gradient to header */
     color: var(--white);
     padding: 10px 0; /* Increase top and bottom padding */
-=======
-    background: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
-    color: var(--black);
-    padding: 10px 0;
->>>>>>> 2138f95c9aa978cf9aaa10f5fe0e99db3990624f
     border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -49,14 +43,11 @@ header h1 {
     float: left;
     font-size: 2em;
     font-weight: bold;
-<<<<<<< HEAD
     font-family: 'CustomFont', Arial, sans-serif;
     background: var(--accent-gradient); /* Gradient text */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: -20px; /* Optional: Adjust bottom margin */
-=======
->>>>>>> 2138f95c9aa978cf9aaa10f5fe0e99db3990624f
 }
 
 nav ul {
@@ -74,23 +65,16 @@ nav ul li a {
     text-decoration: none;
     font-size: 1.2em;
     font-weight: bold;
-<<<<<<< HEAD
     font-family: 'CustomFont', Arial, sans-serif;
     background: var(--accent-gradient); /* Gradient text */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-=======
->>>>>>> 2138f95c9aa978cf9aaa10f5fe0e99db3990624f
 }
 
 .hero {
     background-image: url('images/main.jpg');
     background-size: cover;
-<<<<<<< HEAD
     background-position: center bottom 25%; /* Move background image by 25% */
-=======
-    background-position: center bottom 25%;
->>>>>>> 2138f95c9aa978cf9aaa10f5fe0e99db3990624f
     color: var(--white);
     text-align: center;
     padding: 100px 0;
@@ -128,11 +112,7 @@ nav ul li a {
 
 .game h3,
 .news-item h3 {
-<<<<<<< HEAD
     background: var(--accent-gradient); /* Gradient text */
-=======
-    background: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
->>>>>>> 2138f95c9aa978cf9aaa10f5fe0e99db3990624f
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -167,13 +147,8 @@ nav ul li a {
 }
 
 footer {
-<<<<<<< HEAD
     background: var(--accent-gradient); /* Apply gradient to footer */
     color: var(--white);
-=======
-    background: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
-    color: var(--black);
->>>>>>> 2138f95c9aa978cf9aaa10f5fe0e99db3990624f
     text-align: center;
     padding: 10px 0;
     border-radius: 10px;
@@ -243,17 +218,9 @@ footer {
     font-size: 1.2em;
     font-weight: bold;
     text-decoration: none;
-<<<<<<< HEAD
     color: var(--white); /* White text */
     background-color: transparent;
     border: 2px solid var(--accent-gradient); /* Gradient border */
-=======
-    color: var(--white);
-    background: transparent;
-    border: 2px solid transparent;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
->>>>>>> 2138f95c9aa978cf9aaa10f5fe0e99db3990624f
     border-radius: 20px;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
     cursor: pointer;
@@ -263,7 +230,6 @@ footer {
     -webkit-text-fill-color: transparent;
 }
 
-<<<<<<< HEAD
 .copy-domain-btn:hover,
 .copy-domain-btn:focus,
 .copy-domain-btn:active {
@@ -284,35 +250,3 @@ footer {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-=======
-.copy-domain-btn:hover {
-    background: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
-    color: var(--black);
-}
-
-.copy-domain-btn:focus,
-.copy-domain-btn:active {
-    background: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
-    color: var(--black);
-    border-color: var(--black);
-}
-
-/* Notification Style */
-#copy-notification {
-    position: fixed;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
-    color: var(--black);
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 1.2em;
-    font-weight: bold;
-    transition: bottom 0.3s ease-in-out;
-}
-
-#copy-notification.show {
-    bottom: 20px;
-}
->>>>>>> 2138f95c9aa978cf9aaa10f5fe0e99db3990624f
