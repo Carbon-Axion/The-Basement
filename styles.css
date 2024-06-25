@@ -13,7 +13,14 @@
     --orange: #ff7f50; /* Orange */
     --yellow: #ffd700; /* Gold */
     --dark-gray: #333; /* Dark gray */
-}
+    --sunset-gradient: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db); /* Sunset gradient */
+    --wide-matrix-gradient: linear-gradient(45deg,#fcc5e4,#fda34b,#ff7882,#c8699e,#7046aa,#0c1db8,#020f75); /* Wide matrix gradient */
+    --King-Yna-gradient: linear-gradient(45deg,#1a2a6c,#b21f1f,#fdbb2d); /* King Yna gradient */
+    --current-gradient: var(--King-Yna-gradient);
+
+
+} 
+
 
 /* Global styles */
 body {
@@ -22,17 +29,21 @@ body {
     background-color: var(--black);
     color: var(--white);
     margin: 0;
+    text-shadow: 1px 1px 2px var(--dark-gray), -1px -1px 2px var(--dark-gray); /* Enhances text legibility */
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
+    color: var(--white); /* High contrast text color */
+    border-radius: 5px; /* Optional: Rounded corners for aesthetics */
+    font-weight: bold; /* Optional: Makes text bolder for better readability */
 }
 
 header {
-    background: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
-    color: var(--black);
+    background: var(--current-gradient);
+    color: var(--white);
     padding: 10px 0;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -42,8 +53,9 @@ header h1 {
     float: left;
     font-size: 2em;
     font-weight: bold;
+    line-height: 0.2; /* Keep the adjusted line-height */
+    margin-top: -1px; /* Move the text up */
 }
-
 nav ul {
     list-style-type: none;
     float: right;
@@ -55,7 +67,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--black);
+    color: var(--white);
     text-decoration: none;
     font-size: 1.2em;
     font-weight: bold;
@@ -66,17 +78,26 @@ nav ul li a {
     background-size: cover;
     background-position: center bottom 25%;
     color: var(--white);
-    text-align: center;
-    padding: 100px 0;
+    padding: 200px 0; /* Reduced top padding to raise the text */
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    text-align: center;
 }
+
 
 .hero h2 {
-    font-size: 3em;
-    margin-bottom: 20px;
+    margin: -200px 0 0 0; /* Keeps the adjusted margin to make the text higher */
+    font-weight: bold; /* Makes the text bold */
+    font-size: 48px; /* Increases the font size, adjust as needed */
 }
 
+.hero p {
+    text-align: center; /* Aligns the caption text to the left */
+    margin-top: 20px; /* Adds space between the welcome text and the caption */
+}
 .section {
     padding: 40px 0;
 }
@@ -103,7 +124,7 @@ nav ul li a {
 
 .game h3,
 .news-item h3 {
-    background: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
+    background: var(--current-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -138,7 +159,7 @@ nav ul li a {
 }
 
 footer {
-    background: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
+    background: var(--current-gradient);
     color: var(--black);
     text-align: center;
     padding: 10px 0;
@@ -204,32 +225,59 @@ footer {
 
 /* AMP Button Style */
 .copy-domain-btn {
+    position: relative;
     display: inline-block;
     padding: 10px 20px;
     font-size: 1.2em;
     font-weight: bold;
     text-decoration: none;
-    color: var(--white);
-    background: transparent;
-    border: 2px solid transparent;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
-    border-radius: 20px;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    color: var(--white); /* Initial text color */
+    background: transparent; /* Ensure background is transparent */
+    border: 2px solid var(--black); /* Corrected to use CSS variable for black border */    border-radius: 20px;
     cursor: pointer;
     outline: none;
+    overflow: hidden; /* Hide overflow */
+    transition: color 0.5s ease, border-color 0.5s ease; /* Add transition for border-color */
 }
 
+.copy-domain-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    background: var(--current-gradient);
+    transition: width 0.5s ease, left 0.5s ease;
+    border-radius: 18px; /* Slightly less than the button to fit inside the border */
+    z-index: 0; /* Ensure it's under the text but not using negative z-index */
+}
+
+.copy-domain-btn span {
+    position: relative; /* This makes the text positioned above the ::before pseudo-element */
+    z-index: 1; /* Higher than the ::before pseudo-element */
+}
+
+
 .copy-domain-btn:hover {
-    background: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
-    color: var(--black);
+    border-color: transparent; /* Fade out the border */
+    color: var(--black); /* Adjust if necessary to ensure text remains readable */
+}
+
+.copy-domain-btn:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.copy-domain-btn:hover span {
+    color: var(--white); /* Adjust if necessary to ensure text remains readable */
 }
 
 .copy-domain-btn:focus,
 .copy-domain-btn:active {
-    background: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
-    color: var(--black);
-    border-color: var(--black);
+    background: var(--current-gradient); /* Use the variable for the gradient */
+    color: var(--black); /* Use the variable for black color */
+    border-color: var(--black); /* Use the variable for black color */
 }
 
 /* Notification Style */
@@ -238,7 +286,7 @@ footer {
     bottom: -50px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
+    background: var(--current-gradient);
     color: var(--black);
     padding: 10px 20px;
     border-radius: 20px;
