@@ -7,38 +7,51 @@
 
 /* Colors */
 :root {
-    --black: #0d0d0d; /* Darker black */
-    --white: #fff; /* White */
-    --red: #ff6347; /* Coral */
-    --orange: #ff7f50; /* Orange */
-    --yellow: #ffd700; /* Gold */
-    --dark-gray: #333; /* Dark gray */
-    --sunset-gradient: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db); /* Sunset gradient */
-    --wide-matrix-gradient: linear-gradient(45deg,#fcc5e4,#fda34b,#ff7882,#c8699e,#7046aa,#0c1db8,#020f75); /* Wide matrix gradient */
-    --King-Yna-gradient: linear-gradient(45deg,#1a2a6c,#b21f1f,#fdbb2d); /* King Yna gradient */
-    --current-gradient: var(--King-Yna-gradient);
+    --black: #0d0d0d;
+    --white: #fff;
+    --red: #ff6347;
+    --orange: #ff7f50;
+    --yellow: #ffd700;
+    --dark-gray: #333;
+    --sunset-gradient: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
+    --wide-matrix-gradient: linear-gradient(45deg,#fcc5e4,#fda34b,#ff7882,#c8699e,#7046aa,#0c1db8,#020f75);
+    --King-Yna-gradient: linear-gradient(45deg,#1a2a6c,#b21f1f,#fdbb2d);
+    --Bttf: linear-gradient(45deg,#C02425,#F0CB35);
 
-
-} 
-
+    --current-gradient: var(--Bttf);
+    --dark-mode-bg: #121212;
+    --dark-mode-text: #e0e0e0;
+    --light-mode-bg: #f5f5f5;
+    --light-mode-text: #0d0d0d;
+}
 
 /* Global styles */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--dark-mode-bg);
+    color: var(--dark-mode-text);
     margin: 0;
-    text-shadow: 1px 1px 2px var(--dark-gray), -1px -1px 2px var(--dark-gray); /* Enhances text legibility */
+    transition: background-color 0.3s, color 0.3s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a dark shadow for contrast */
+
+
+body.light-mode {
+    background-color: var(--light-mode-bg);
+    color: var(--black);  /* Ensure text color is black in light mode */
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
-    color: var(--white); /* High contrast text color */
-    border-radius: 5px; /* Optional: Rounded corners for aesthetics */
-    font-weight: bold; /* Optional: Makes text bolder for better readability */
+    color: var(--white);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+body.light-mode .container {
+    color: var(--black);  /* Ensure container text color is black in light mode */
 }
 
 header {
@@ -53,9 +66,10 @@ header h1 {
     float: left;
     font-size: 2em;
     font-weight: bold;
-    line-height: 0.2; /* Keep the adjusted line-height */
-    margin-top: -1px; /* Move the text up */
+    line-height: 0.2;
+    margin-top: -1px;
 }
+
 nav ul {
     list-style-type: none;
     float: right;
@@ -78,26 +92,26 @@ nav ul li a {
     background-size: cover;
     background-position: center bottom 25%;
     color: var(--white);
-    padding: 200px 0; /* Reduced top padding to raise the text */
+    padding: 200px 0;
     border-radius: 10px;
     margin-bottom: 0px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers content vertically */
+    justify-content: center;
     text-align: center;
 }
 
-
 .hero h2 {
-    margin: -200px 0 0 0; /* Keeps the adjusted margin to make the text higher */
-    font-weight: bold; /* Makes the text bold */
-    font-size: 48px; /* Increases the font size, adjust as needed */
+    margin: -200px 0 0 0;
+    font-weight: bold;
+    font-size: 48px;
 }
 
 .hero p {
-    text-align: center; /* Aligns the caption text to the left */
-    margin-top: 20px; /* Adds space between the welcome text and the caption */
+    text-align: center;
+    margin-top: 20px;
 }
+
 .section {
     padding: 40px 0;
 }
@@ -114,6 +128,16 @@ nav ul li a {
     padding: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+body.light-mode .game {
+    background-color: var(--light-mode-bg);
+    color: var(--black);  /* Ensure game text color is black in light mode */
+}
+
+.game:hover {
+    transform: scale(1.05);
 }
 
 .game img {
@@ -137,25 +161,23 @@ nav ul li a {
     border-radius: 10px;
 }
 
+body.light-mode .news-item {
+    background-color: var(--light-mode-bg);
+    color: var(--black);  /* Ensure news item text color is black in light mode */
+}
+
 .news-item p {
     color: var(--white);
 }
 
-.discord-widget-wrapper {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto 20px auto;
-    overflow: hidden;
-    background-color: var(--dark-gray);
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+body.light-mode .news-item p {
+    color: var(--black);  /* Ensure news item paragraph text color is black in light mode */
 }
 
-.discord-widget-wrapper iframe {
-    width: 100%;
-    height: 450px;
-    border: none;
+.discord-widget-wrapper {
+    flex: 1 1 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 footer {
@@ -217,12 +239,6 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
-    .game {
-        width: calc(80% - 20px);
-    }
-}
-
 /* AMP Button Style */
 .copy-domain-btn {
     position: relative;
@@ -231,13 +247,17 @@ footer {
     font-size: 1.2em;
     font-weight: bold;
     text-decoration: none;
-    color: var(--white); /* Initial text color */
-    background: transparent; /* Ensure background is transparent */
-    border: 2px solid var(--black); /* Corrected to use CSS variable for black border */    border-radius: 20px;
+    color: var(--white);
+    background: transparent;
+    border: 2px solid var(--black);
+    border-radius: 20px;
     cursor: pointer;
     outline: none;
-    overflow: hidden; /* Hide overflow */
-    transition: color 0.5s ease, border-color 0.5s ease; /* Add transition for border-color */
+    overflow: hidden;
+    transition: color 0.5s ease, border-color 0.5s ease, background 0.5s ease;
+}
+.copy-domain-btn.copying {
+    background: transparent; /* Ensure background is transparent when copying */
 }
 
 .copy-domain-btn::before {
@@ -249,35 +269,33 @@ footer {
     height: 100%;
     background: var(--current-gradient);
     transition: width 0.5s ease, left 0.5s ease;
-    border-radius: 18px; /* Slightly less than the button to fit inside the border */
-    z-index: 0; /* Ensure it's under the text but not using negative z-index */
+    border-radius: 18px;
+    z-index: 0;
 }
+.copy-domain-btn.copied {
+    /* Add animation styles for when button is copied */
+    transform: scale(1.1); /* Example: Scale animation */
+}
+
 
 .copy-domain-btn span {
-    position: relative; /* This makes the text positioned above the ::before pseudo-element */
-    z-index: 1; /* Higher than the ::before pseudo-element */
+    position: relative;
+    z-index: 1;
 }
 
 
-.copy-domain-btn:hover {
-    border-color: transparent; /* Fade out the border */
-    color: var(--black); /* Adjust if necessary to ensure text remains readable */
-}
 
 .copy-domain-btn:hover::before {
     width: 100%;
     left: 0;
 }
 
-.copy-domain-btn:hover span {
-    color: var(--white); /* Adjust if necessary to ensure text remains readable */
-}
 
 .copy-domain-btn:focus,
 .copy-domain-btn:active {
-    background: var(--current-gradient); /* Use the variable for the gradient */
-    color: var(--black); /* Use the variable for black color */
-    border-color: var(--black); /* Use the variable for black color */
+    background: transparent; /* Reset background on focus/active */
+    color: var(--white);
+    border-color: var(--black);
 }
 
 /* Notification Style */
@@ -287,7 +305,7 @@ footer {
     left: 50%;
     transform: translateX(-50%);
     background: var(--current-gradient);
-    color: var(--black);
+    color: var(--white);
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 1.2em;
@@ -297,4 +315,54 @@ footer {
 
 #copy-notification.show {
     bottom: 20px;
+}
+
+
+/* Toggle Switch Style 
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 20px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dark-mode-bg);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--light-mode-bg);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--light-mode-bg);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+    background-color: var(--dark-mode-bg);
+}*/
 }
