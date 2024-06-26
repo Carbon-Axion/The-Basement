@@ -14,11 +14,11 @@
     --yellow: #ffd700;
     --dark-gray: #333;
     --sunset-gradient: linear-gradient(45deg, #f3904f, #da9163, #c19277, #a8938b, #8f959f, #7696b3, #5d97c7, #4498db);
-    --wide-matrix-gradient: linear-gradient(45deg,#fcc5e4,#fda34b,#ff7882,#c8699e,#7046aa,#0c1db8,#020f75);
-    --King-Yna-gradient: linear-gradient(45deg,#1a2a6c,#b21f1f,#fdbb2d);
-    --Bttf: linear-gradient(45deg,#C02425,#F0CB35);
+    --wide-matrix-gradient: linear-gradient(45deg, #fcc5e4, #fda34b, #ff7882, #c8699e, #7046aa, #0c1db8, #020f75);
+    --king-yna-gradient: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+    --bttf: linear-gradient(45deg, #c02425, #f0cb35);
 
-    --current-gradient: var(--Bttf);
+    --current-gradient: var(--bttf);
     --dark-mode-bg: #121212;
     --dark-mode-text: #e0e0e0;
     --light-mode-bg: #f5f5f5;
@@ -34,11 +34,11 @@ body {
     margin: 0;
     transition: background-color 0.3s, color 0.3s;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a dark shadow for contrast */
-
+}
 
 body.light-mode {
     background-color: var(--light-mode-bg);
-    color: var(--black);  /* Ensure text color is black in light mode */
+    color: var(--light-mode-text);
 }
 
 .container {
@@ -50,34 +50,28 @@ body.light-mode {
     font-weight: bold;
 }
 
-body.light-mode .container {
-    color: var(--black);  /* Ensure container text color is black in light mode */
-}
+
 
 header {
     background: var(--current-gradient);
     color: var(--white);
-    padding: 10px 0;
+    padding: 0px 0;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
-    float: left;
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: bold;
-    line-height: 0.2;
-    margin-top: -1px;
 }
 
 nav ul {
     list-style-type: none;
-    float: right;
-}
-
-nav ul li {
-    display: inline;
-    margin-left: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 nav ul li a {
@@ -85,16 +79,21 @@ nav ul li a {
     text-decoration: none;
     font-size: 1.2em;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--yellow);
 }
 
 .hero {
     background-image: url('images/main.jpg');
     background-size: cover;
-    background-position: center bottom 25%;
+    background-position: center;
     color: var(--white);
-    padding: 200px 0;
+    padding: 150px 0;
     border-radius: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,14 +101,13 @@ nav ul li a {
 }
 
 .hero h2 {
-    margin: -200px 0 0 0;
     font-weight: bold;
     font-size: 48px;
 }
 
 .hero p {
-    text-align: center;
     margin-top: 20px;
+    font-size: 1.5em;
 }
 
 .section {
@@ -120,20 +118,26 @@ nav ul li a {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .game {
-    margin-bottom: 20px;
     background-color: var(--dark-gray);
-    padding: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     border-radius: 10px;
     transition: transform 0.3s;
+    flex: 1;
+    min-width: 300px;
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 body.light-mode .game {
     background-color: var(--light-mode-bg);
-    color: var(--black);  /* Ensure game text color is black in light mode */
+    color: var(--light-mode-text);
 }
 
 .game:hover {
@@ -146,47 +150,70 @@ body.light-mode .game {
     border-radius: 10px;
 }
 
-.game h3,
-.news-item h3 {
+.game h3 {
     background: var(--current-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin: 20px 0 10px;
+    font-size: 1.8em;
+}
+
+.game p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .news-item {
     background-color: var(--dark-gray);
     padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    transition: transform 0.3s;
 }
 
 body.light-mode .news-item {
     background-color: var(--light-mode-bg);
-    color: var(--black);  /* Ensure news item text color is black in light mode */
+    color: var(--light-mode-text);
+}
+
+.news-item:hover {
+    transform: scale(1.05);
+}
+
+.news-item h3 {
+    background: var(--current-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    font-size: 1.5em;
 }
 
 .news-item p {
+    font-size: 1.2em;
     color: var(--white);
 }
 
 body.light-mode .news-item p {
-    color: var(--black);  /* Ensure news item paragraph text color is black in light mode */
+    color: var(--light-mode-text);
 }
 
 .discord-widget-wrapper {
-    flex: 1 1 100%;
-    margin: 0 auto;
-    margin-bottom: 20px;
+    width: 100%;
+    margin: 40px 0;
 }
 
 footer {
     background: var(--current-gradient);
-    color: var(--black);
+    color: var(--white);
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 /* Responsive styles */
@@ -196,23 +223,22 @@ footer {
         padding: 10px;
     }
 
-    header h1,
-    nav ul {
-        float: none;
+    header {
+        flex-direction: column;
         text-align: center;
     }
 
-    nav ul {
-        padding: 10px 0;
+    header h1 {
+        margin-bottom: 10px;
     }
 
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
     }
 
     .hero {
-        padding: 50px 0;
+        padding: 100px 0;
     }
 
     .hero h2 {
@@ -225,7 +251,7 @@ footer {
     }
 
     .game {
-        width: 40%;
+        max-width: 80%;
     }
 }
 
@@ -235,7 +261,7 @@ footer {
     }
 
     .game {
-        width: 100%;
+        max-width: 100%;
     }
 }
 
@@ -256,9 +282,6 @@ footer {
     overflow: hidden;
     transition: color 0.5s ease, border-color 0.5s ease, background 0.5s ease;
 }
-.copy-domain-btn.copying {
-    background: transparent; /* Ensure background is transparent when copying */
-}
 
 .copy-domain-btn::before {
     content: '';
@@ -272,28 +295,20 @@ footer {
     border-radius: 18px;
     z-index: 0;
 }
-.copy-domain-btn.copied {
-    /* Add animation styles for when button is copied */
-    transform: scale(1.1); /* Example: Scale animation */
-}
-
 
 .copy-domain-btn span {
     position: relative;
     z-index: 1;
 }
 
-
-
 .copy-domain-btn:hover::before {
     width: 100%;
     left: 0;
 }
 
-
 .copy-domain-btn:focus,
 .copy-domain-btn:active {
-    background: transparent; /* Reset background on focus/active */
+    background: transparent;
     color: var(--white);
     border-color: var(--black);
 }
@@ -315,54 +330,4 @@ footer {
 
 #copy-notification.show {
     bottom: 20px;
-}
-
-
-/* Toggle Switch Style 
-.theme-switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-    margin-left: 20px;
-}
-
-.theme-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--dark-mode-bg);
-    transition: .4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: var(--light-mode-bg);
-    transition: .4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background-color: var(--light-mode-bg);
-}
-
-input:checked + .slider:before {
-    transform: translateX(26px);
-    background-color: var(--dark-mode-bg);
-}*/
 }
