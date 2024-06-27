@@ -1,32 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const copyButtons = document.querySelectorAll('.copy-domain-btn');
+document.addEventListener('DOMContentLoaded', (event) => {
     const notification = document.getElementById('copy-notification');
 
-    copyButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const domainText = "Your Domain Text"; // Replace with actual domain text
-            navigator.clipboard.writeText(domainText).then(() => {
-                notification.classList.add('show');
-                setTimeout(() => {
-                    notification.classList.remove('show');
-                }, 3000);
-            });
-
-            // Remove focus from the clicked button
-            button.blur();
-
-            // Trigger animation class for copying effect
-            button.classList.add('copying');
+    // Function to handle copying text to clipboard and showing notification
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            notification.classList.add('show');
             setTimeout(() => {
-                button.classList.remove('copying');
-            }, 1000); // Adjust timing to match your CSS animation duration
+                notification.classList.remove('show');
+            }, 2000);
         });
+    }
 
-        // Remove copying class when focus is lost
-        button.addEventListener('focusout', () => {
-            button.classList.remove('copying');
-        });
+    // Event listeners for the buttons
+    document.getElementById('copy-java').addEventListener('click', () => {
+        copyToClipboard('example-minecraft.com'); // Replace with the actual domain
     });
 
+    document.getElementById('copy-bedrock').addEventListener('click', () => {
+        copyToClipboard('another-minecraft.com'); // Replace with the actual domain
 
+        document.getElementById('copy-tf2').addEventListener('click', () => {
+            copyToClipboard('another-minecraft.com'); // Replace with the actual domain
+    });
 });
