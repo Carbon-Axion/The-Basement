@@ -18,8 +18,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     document.getElementById('copy-bedrock').addEventListener('click', () => {
         copyToClipboard('another-minecraft.com'); // Replace with the actual domain
+    });
 
-        document.getElementById('copy-tf2').addEventListener('click', () => {
-            copyToClipboard('another-minecraft.com'); // Replace with the actual domain
+    document.getElementById('copy-tf2').addEventListener('click', () => {
+        copyToClipboard('another-minecraft.com'); // Replace with the actual domain
     });
 });
