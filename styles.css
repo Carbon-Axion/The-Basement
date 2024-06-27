@@ -24,16 +24,33 @@
     --light-mode-bg: #f5f5f5;
     --light-mode-text: #0d0d0d;
 }
+.merriweather-regular {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .merriweather-bold {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
 
 /* Global styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Merriweather', serif;
     line-height: 1.6;
     background-color: var(--dark-mode-bg);
     color: var(--dark-mode-text);
     margin: 0;
     transition: background-color 0.3s, color 0.3s;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a dark shadow for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
 }
 
 body.light-mode {
@@ -172,11 +189,16 @@ nav ul li a:hover {
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 40px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: initial; /* Add the standard property 'background-clip' */
 }
 
 .game h3 {
     background: var(--texts);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 20px 0 10px;
     font-size: 1.8em;
@@ -207,6 +229,7 @@ nav ul li a:hover {
 .news-item h3 {
     background: var(--texts);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 10px;
     font-size: 1.5em;
