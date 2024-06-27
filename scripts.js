@@ -13,14 +13,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Event listeners for the buttons
     document.getElementById('copy-java').addEventListener('click', () => {
-        copyToClipboard('example-minecraft.com'); // Replace with the actual domain
+        copyToClipboard('mc.thebasement.app'); // Replace with the actual domain
     });
 
     document.getElementById('copy-bedrock').addEventListener('click', () => {
-        copyToClipboard('another-minecraft.com'); // Replace with the actual domain
+        copyToClipboard('mcpe.thebasement.app'); // Replace with the actual domain
     });
 
     document.getElementById('copy-tf2').addEventListener('click', () => {
-        copyToClipboard('another-minecraft.com'); // Replace with the actual domain
+        copyToClipboard('tf2.thebasement.app'); // Replace with the actual domain
     });
 });

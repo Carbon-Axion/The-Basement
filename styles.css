@@ -21,8 +21,6 @@
     --current-gradient: var(--bttf); 
     --dark-mode-bg: #121212;
     --dark-mode-text: #e0e0e0;
-    --light-mode-bg: #f5f5f5;
-    --light-mode-text: #0d0d0d;
 }
 .merriweather-regular {
     font-family: "Merriweather", serif;
@@ -33,7 +31,7 @@
   .merriweather-bold {
     font-family: "Merriweather", serif;
     font-weight: 700;
-    font-style: normal;
+    font-style: bold;
   }
   
 
@@ -53,10 +51,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-body.light-mode {
-    background-color: var(--light-mode-bg);
-    color: var(--light-mode-text);
-}
 
 .container {
     width: 80%;
@@ -67,6 +61,13 @@ body.light-mode {
     font-weight: bold;
 }
 
+.date {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 0.9em;
+    color: #888;
+}
 
 
 header {
