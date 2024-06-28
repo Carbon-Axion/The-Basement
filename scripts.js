@@ -12,15 +12,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     // Event listeners for the buttons
-    document.getElementById('copy-java').addEventListener('click', () => {
+    document.getElementById('java').addEventListener('click', () => {
         copyToClipboard('mc.thebasement.app'); // Replace with the actual domain
     });
 
-    document.getElementById('copy-bedrock').addEventListener('click', () => {
+    document.getElementById('bedrock').addEventListener('click', () => {
         copyToClipboard('mcpe.thebasement.app'); // Replace with the actual domain
     });
 
-    document.getElementById('copy-tf2').addEventListener('click', () => {
+    document.getElementById('tf2').addEventListener('click', () => {
         copyToClipboard('tf2.thebasement.app'); // Replace with the actual domain
     });
 });
